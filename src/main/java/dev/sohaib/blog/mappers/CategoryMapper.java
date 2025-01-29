@@ -1,7 +1,7 @@
 package dev.sohaib.blog.mappers;
 
 import dev.sohaib.blog.domain.PostStatus;
-import dev.sohaib.blog.domain.dtos.CategoryDto;
+import dev.sohaib.blog.domain.dtos.CategoryResponse;
 import dev.sohaib.blog.domain.dtos.CreateCategoryRequest;
 import dev.sohaib.blog.domain.entities.Category;
 import dev.sohaib.blog.domain.entities.Post;
@@ -16,7 +16,7 @@ import java.util.List;
 public interface CategoryMapper {
 
     @Mapping(target = "postCount", source = "posts", qualifiedByName = "calculatePostCount")
-    CategoryDto toDto(Category category);
+    CategoryResponse toDto(Category category);
 
     Category toEntity(CreateCategoryRequest createCategoryRequest);
 
